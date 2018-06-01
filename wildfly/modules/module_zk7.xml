@@ -38,10 +38,6 @@
         <resource-root path="slf4j-api.jar"/>
         <resource-root path="slf4j-jdk14.jar"/>
         <resource-root path="bsh.jar"/>
-        <!-- <resource-root path="commons-codec.jar"/>
-        <resource-root path="commons-fileupload.jar"/>
-        <resource-root path="commons-io.jar"/> -->
-        <!-- <resource-root path="javassist.jar"/> -->
     </resources>
     <dependencies>
   		<module name="javax.servlet.api"/>

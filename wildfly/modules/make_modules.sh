@@ -1,7 +1,13 @@
 #variablies
-WF_MODULE_PATH='/opt/jboss/wildfly/modules/system/layers/base'
+WF_MODULE_PATH=${JBOSS_HOME}'/modules/system/layers/base'
 ZK8_VER='8.0.2.2'
 ZK7_VER='7.0.3'
+
+#setup org.apache.commons.fileupload
+echo 'Download jars of org.apache.commons.fileupload =>'
+mkdir -p ${WF_MODULE_PATH}/org/apache/commons/fileupload/main
+curl -# -o ${WF_MODULE_PATH}/org/apache/commons/fileupload/main/commons-fileupload.jar http://central.maven.org/maven2/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar
+cp /tmp/modules/module_commons_fileupload.xml ${WF_MODULE_PATH}/org/apache/commons/fileupload/main/module.xml
 
 #setup zk module(7.0.3)
 echo 'Download jars of zk-'${ZK7_VER} '=>'
@@ -21,6 +27,7 @@ curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/bsh.jar http://central.mave
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/slf4j-api.jar http://central.maven.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar 
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/slf4j-jdk14.jar http://central.maven.org/maven2/org/slf4j/slf4j-jdk14/1.7.5/slf4j-jdk14-1.7.5.jar 
 cp /tmp/modules/module_zk7.xml ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/module.xml
+
 #setup zk module(8.0.2.2)
 echo 'Download jars of zk-'${ZK8_VER} '=>'
 mkdir -p ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}
