@@ -7,7 +7,7 @@ ZK7_VER='7.0.3'
 echo 'Download jars of org.apache.commons.fileupload =>'
 mkdir -p ${WF_MODULE_PATH}/org/apache/commons/fileupload/main
 curl -# -o ${WF_MODULE_PATH}/org/apache/commons/fileupload/main/commons-fileupload.jar http://central.maven.org/maven2/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar
-cp /tmp/modules/module_commons_fileupload.xml ${WF_MODULE_PATH}/org/apache/commons/fileupload/main/module.xml
+cp ./module_commons_fileupload.xml ${WF_MODULE_PATH}/org/apache/commons/fileupload/main/module.xml
 
 #setup zk module(7.0.3)
 echo 'Download jars of zk-'${ZK7_VER} '=>'
@@ -26,7 +26,7 @@ curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/zsoup.jar http://mavensync.
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/bsh.jar http://central.maven.org/maven2/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar 
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/slf4j-api.jar http://central.maven.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar 
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/slf4j-jdk14.jar http://central.maven.org/maven2/org/slf4j/slf4j-jdk14/1.7.5/slf4j-jdk14-1.7.5.jar 
-cp /tmp/modules/module_zk7.xml ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/module.xml
+cp ./module_zk7.xml ${WF_MODULE_PATH}/org/zkoss/zk/${ZK7_VER}/module.xml
 
 #setup zk module(8.0.2.2)
 echo 'Download jars of zk-'${ZK8_VER} '=>'
@@ -45,11 +45,11 @@ curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zsoup.jar http://mavensync.
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/bsh.jar http://central.maven.org/maven2/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar 
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/slf4j-api.jar http://central.maven.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar 
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/slf4j-jdk14.jar http://central.maven.org/maven2/org/slf4j/slf4j-jdk14/1.7.5/slf4j-jdk14-1.7.5.jar 
-cp /tmp/modules/module_zk8.xml ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/module.xml
+cp ./module_zk8.xml ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/module.xml
 
-mkdir ${WF_MODULE_PATH}/org/zkoss/zk/main && cp /tmp/modules/module_zk.xml ${WF_MODULE_PATH}/org/zkoss/zk/main/module.xml
+#setup default slot of zk module(default is zk8)
+mkdir ${WF_MODULE_PATH}/org/zkoss/zk/main && cp ./module_zk.xml ${WF_MODULE_PATH}/org/zkoss/zk/main/module.xml
 
-rm -rf /tmp
 
 
 
