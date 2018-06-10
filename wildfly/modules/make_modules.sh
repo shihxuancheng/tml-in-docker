@@ -1,7 +1,19 @@
 #variablies
-WF_MODULE_PATH=${JBOSS_HOME}'/modules/system/layers/base'
+WF_MODULE_PATH=${JBOSS_HOME}'/modules'
 ZK8_VER='8.0.2.2'
 ZK7_VER='7.0.3'
+
+#setup module of mysql jdbc driver(5.1.38)
+echo 'Download mysql jdbc jdbc driver =>'
+mkdir -p ${WF_MODULE_PATH}/com/mysql/jdbc/main
+curl -# -o ${WF_MODULE_PATH}/com/mysql/jdbc/main/mysql-connector-java.jar http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar
+cp ./module_jdbc_mysql.xml ${WF_MODULE_PATH}/com/mysql/jdbc/main/module.xml
+
+#setup module of oracle jdbc driver(11.2.0.3)
+echo 'Download oracle jdbc driver =>'
+mkdir -p ${WF_MODULE_PATH}/com/oracle/jdbc/main
+curl -# -o ${WF_MODULE_PATH}/com/oracle/jdbc/main/ojdbc6.jar http://www.datanucleus.org/downloads/maven2/oracle/ojdbc6/11.2.0.3/ojdbc6-11.2.0.3.jar
+cp ./module_jdbc_oracle.xml ${WF_MODULE_PATH}/com/oracle/jdbc/main/module.xml
 
 #setup org.apache.commons.fileupload
 echo 'Download jars of org.apache.commons.fileupload =>'

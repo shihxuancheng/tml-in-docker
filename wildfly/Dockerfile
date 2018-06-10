@@ -1,12 +1,11 @@
 FROM jboss/wildfly:11.0.0.Final
 
 # Environment variable with default value
-# ARG WAR_FILE_FROM=appfile.war
-# ARG WAR_FILE_DEPLOY=${WAR_FILE_FROM}
-LABEL maintainer="richard_shih@wanhai.com"
+ENV WF_CONFIG="standalone.xml"
+#for session persistance using
+ENV SESSIONDB_HOST='localhost:3306' SESSIONDB_NAME='wf_sessions' SESSIONDB_USER='session' SESSIONDB_PASS='session'
 
-#default user is 'jboss'
-#USER jboss
+LABEL maintainer="richard_shih@wanhai.com"
 
 #prepare tmp dir
 COPY --chown=jboss . ${JBOSS_HOME}/config
@@ -19,9 +18,6 @@ RUN cd ${JBOSS_HOME}/config/initial && ./setup.sh
 
 #cleanup
 RUN rm -rf ${JBOSS_HOME}/config
-
-# Add your application to the deployment folder
-# COPY ${WAR_FILE_FROM} ${JBOSS_HOME}/standalone/deployments/${WAR_FILE_DEPLOY}
 
 EXPOSE 8080 9990
 
