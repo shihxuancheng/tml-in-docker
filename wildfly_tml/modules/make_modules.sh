@@ -4,7 +4,7 @@ WF_MODULE_PATH=${JBOSS_HOME}'/modules'
 #setup module google gson(2.7)
 echo 'Download jars of google gson =>'
 mkdir -p ${WF_MODULE_PATH}/com/google/gson/main
-curl -# -o ${WF_MODULE_PATH}/com/google/gson/main/gson-2.7.jar.jar http://central.maven.org/maven2/com/google/code/gson/gson/2.7/gson-2.7.jar
+curl -# -o ${WF_MODULE_PATH}/com/google/gson/main/gson-2.7.jar http://central.maven.org/maven2/com/google/code/gson/gson/2.7/gson-2.7.jar
 cp ./module_gson.xml ${WF_MODULE_PATH}/com/google/gson/main/module.xml
 
 #setup module of apache commons-logging (1.1.3)
@@ -16,10 +16,16 @@ cp ./module_commons_logging_113.xml ${WF_MODULE_PATH}/org/apache/commons/logging
 mkdir ${WF_MODULE_PATH}/org/apache/commons/main && cp ./module_commons_logging.xml ${WF_MODULE_PATH}/org/apache/commons/main/module.xml
 
 #setup module of apache commons-net(3.6)
-echo 'Download jars of common-net =>'
+echo 'Download jars of commons-net =>'
 mkdir -p ${WF_MODULE_PATH}/org/apache/commons/net/main
-curl -# -o ${WF_MODULE_PATH}//org/apache/commons/net/main/commons-net-3.6.jar http://central.maven.org/maven2/commons-net/commons-net/3.6/commons-net-3.6.jar
+curl -# -o ${WF_MODULE_PATH}/org/apache/commons/net/main/commons-net-3.6.jar http://central.maven.org/maven2/commons-net/commons-net/3.6/commons-net-3.6.jar
 cp ./module_commons_net.xml ${WF_MODULE_PATH}/org/apache/commons/net/main/module.xml
+
+#setup module of apache commons-digester(1.6)
+echo 'Download jars of commons-digester =>'
+mkdir -p ${WF_MODULE_PATH}/org/apache/commons/digester/main
+curl -# -o ${WF_MODULE_PATH}/org/apache/commons/digester/main/commons-digester.jar http://central.maven.org/maven2/commons-digester/commons-digester/1.6/commons-digester-1.6.jar
+cp ./module_commons_digester.xml ${WF_MODULE_PATH}/org/apache/commons/digester/main/module.xml
 
 #setup module of groovy(2.4.7)
 echo 'Download jars of groovy=>'
@@ -76,14 +82,31 @@ curl -# -o ${WF_MODULE_PATH}/net/sf/jasperreports/6.4.1/jasperreports-6.4.1.jar 
 cp ./module_jasperreports_641.xml ${WF_MODULE_PATH}/net/sf/jasperreports/6.4.1/module.xml
 #setup default slot of jasperreports module(default is 6.4.1)
 mkdir ${WF_MODULE_PATH}/net/sf/jasperreports/main && cp ./module_jasperreports.xml ${WF_MODULE_PATH}/net/sf/jasperreports/main/module.xml
-
-#setup module of jasperreports font
-
 #setup module of wanhai base
+echo 'Download jars of com.wanhai.base=>'
+mkdir -p ${WF_MODULE_PATH}/com/wanhai/base/main
+curl -# -o ${WF_MODULE_PATH}/com/wanhai/base/main/whl-utility.jar http://khhwtml02t.wanhai.com:8181/repository/maven-releases/com/wanhai/base/whl-utility/1.0.0/whl-utility-1.0.0.jar
+curl -# -o ${WF_MODULE_PATH}/com/wanhai/base/main/whl-security-fake.jar http://khhwtml02t.wanhai.com:8181/repository/maven-releases/com/wanhai/base/whl-security/1.0.0/whl-security-1.0.0.jar
+curl -# -o ${WF_MODULE_PATH}/com/wanhai/base/main/whl-biz.jar http://khhwtml02t.wanhai.com:8181/repository/maven-releases/com/wanhai/base/whl-biz/1.0.0/whl-biz-1.0.0.jar
+cp ./module_wanhai_base.xml ${WF_MODULE_PATH}/com/wanhai/base/main/module.xml
 #setup module of wanhai zk base
+echo 'Download jars of com.wanhai.zk=>'
+mkdir -p ${WF_MODULE_PATH}/com/wanhai/zk/main
+curl -# -o ${WF_MODULE_PATH}/com/wanhai/zk/main/whl-zk-template.jar http://khhwtml02t.wanhai.com:8181/repository/maven-releases/com/wanhai/zk/whl-template/1.0.0/whl-template-1.0.0.jar
+curl -# -o ${WF_MODULE_PATH}/com/wanhai/zk/main/whl-zk-base.jar http://khhwtml02t.wanhai.com:8181/repository/maven-releases/com/wanhai/zk/whl-zk-base/1.0.0/whl-zk-base-1.0.0.jar
+cp ./module_wanhai_zk.xml ${WF_MODULE_PATH}/com/wanhai/zk/main/module.xml
 #setup module of tml base
 #setup module of tml vo
+echo 'Download jars of com.wanhai.tml.vo=>'
+mkdir -p ${WF_MODULE_PATH}/com/wanhai/tml/vo/main
+curl -# -o ${WF_MODULE_PATH}/com/wanhai/tml/vo/main/whl-vo-sec.jar http://khhwtml02t.wanhai.com:8181/repository/maven-releases/com/wanhai/tml/whl-vo-sec/0.1.0/whl-vo-sec-0.1.0.jar
+curl -# -o ${WF_MODULE_PATH}/com/wanhai/tml/vo/main/whl-vo-tml.jar http://khhwtml02t.wanhai.com:8181/repository/maven-releases/com/wanhai/tml/whl-vo-tml/0.1.0/whl-vo-tml-0.1.0.jar
+cp ./module_tml_vo.xml ${WF_MODULE_PATH}/com/wanhai/tml/vo/main/module.xml
 #setup module of tml bizbean
+echo 'Download jars of com.wanhai.tml.bizbean=>'
+mkdir -p ${WF_MODULE_PATH}/com/wanhai/tml/bizbean/main
+curl -# -o ${WF_MODULE_PATH}/com/wanhai/tml/bizbean/main/whl-biztml.jar http://khhwtml02t.wanhai.com:8181/repository/maven-releases/com/wanhai/tml/whl-biztml/0.1.0/whl-biztml-0.1.0.jar
+cp ./module_tml_bizbean.xml ${WF_MODULE_PATH}/com/wanhai/tml/bizbean/main/module.xml
 
 
 
