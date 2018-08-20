@@ -40,14 +40,16 @@
         <resource-root path="bsh.jar"/>
     </resources>
     <dependencies>
+  		<module name="org.apache.commons.fileupload"/>
+  		<module name="org.javassist"/>
+      <module name="org.apache.commons.io"/>
+      <module name="org.apache.commons.codec"/>
   		<module name="javax.servlet.api"/>
-        <module name="org.javassist"/>   
-        <module name="org.apache.commons.codec"/>
-        <module name="org.apache.commons.fileupload"/>
-        <module name="org.apache.commons.io"/>
   		<module name="org.jboss.vfs"/>
-  		<module name="org.apache.commons.logging"/>
-        <module name="javaee.api"/>
+  		<module name="org.springframework"/>
+  		<module name="org.apache.commons.logging" slot="1.1.3"/>
+  		<module name="org.slf4j"/>
+      <module name="javaee.api"/>
     </dependencies>
 </module>
 

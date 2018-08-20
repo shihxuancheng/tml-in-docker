@@ -1,6 +1,8 @@
 FROM khhwtml02t.wanhai.com:8182/jboss/wildfly-tml:0.1.0
 LABEL maintainer="richard_shih@wanhai.com"
 
+ENV TZ="Asia/Taipei"
+
 #prepare tmp dir
 COPY --chown=jboss . ${JBOSS_HOME}/config
 
