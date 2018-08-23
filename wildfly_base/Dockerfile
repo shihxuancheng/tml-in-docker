@@ -2,8 +2,10 @@ FROM jboss/wildfly:11.0.0.Final
 
 # Environment variable with default value
 ENV WF_CONFIG="standalone.xml"
+ENV TZ="Asia/Taipei"
+
 #for session persistance using
-ENV SESSIONDB_HOST='localhost:3306' SESSIONDB_NAME='wf_sessions' SESSIONDB_USER='session' SESSIONDB_PASS='session'
+#ENV SESSIONDB_HOST='localhost:3306' SESSIONDB_NAME='wf_sessions' SESSIONDB_USER='session' SESSIONDB_PASS='session'
 
 LABEL maintainer="richard_shih@wanhai.com"
 

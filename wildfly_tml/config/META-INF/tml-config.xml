@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmlConfig>
+    <!--yard info-->
+    <yards>
+        <yard name="KHH063" id="KHH063" place_code="TWKHH" descn_e="KHH063" descn_c="高雄碼頭" defaultSite="true">
+            <datasources>
+                <datasource name="prod">
+                    <tnsName>whlt_khhw5</tnsName>
+                    <jndiValue>java:/OraWhltDS</jndiValue>
+                </datasource>
+                <datasource name="uat">
+                    <tnsName>whlt_khhw6</tnsName>
+                    <jndiValue>java:/OraWhltDS</jndiValue>
+                </datasource>
+                <datasource name="sat">
+                    <tnsName>whlt_khhw6</tnsName>
+                    <jndiValue>java:/OraWhltDS</jndiValue>
+                </datasource>
+            </datasources>
+            <!--ott server url-->
+            <ott>/collab/ott/oneTimeTicket.jsp</ott>
+        </yard>
+        <yard name="TXG034" id="TXG034" place_code="TWTXG" descn_e="TXG034" descn_c="台中碼頭">
+            <datasources>
+                <datasource name="prod">
+                    <tnsName>whlt_txgw5</tnsName>
+                    <jndiValue>java:/OraWhltDS</jndiValue>
+                </datasource>
+                <datasource name="uat">
+                    <tnsName>whlt_txgw6</tnsName>
+                    <jndiValue>java:/OraWhltDS</jndiValue>
+                </datasource>
+                <datasource name="sat">
+                    <tnsName>whlt_txgw6</tnsName>
+                    <jndiValue>java:/OraWhltDS</jndiValue>
+                </datasource>
+            </datasources>
+            <!--ott server url-->
+            <ott>/collab/ott/oneTimeTicket.jsp</ott>
+        </yard>
+        <!--<yard name="JPTYO" descn_e="JPTYO" descn_c="大井碼頭"></yard>-->
+    </yards>
+</tmlConfig>

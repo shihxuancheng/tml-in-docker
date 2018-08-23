@@ -22,13 +22,9 @@
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
   -->
 
-<module xmlns="urn:jboss:module:1.3" name="net.sf.jasperreports.fonts">
+<module xmlns="urn:jboss:module:1.3" name="org.codehaus.groovy">
     <resources>
-        <resource-root path="font-Arial.jar"/>
-		  <resource-root path="font-kaiu.jar"/>
-		  <resource-root path="font-mingliu.jar"/>
-		  <resource-root path="font-Times New Roman.jar"/>
-		  <resource-root path="itext.jar"/>
+      <resource-root path="groovy-all-2.4.7.jar"/>
     </resources>
     <dependencies>
     </dependencies>
