@@ -12,5 +12,5 @@ curl -# -o ${earDir}/${earLibDir}'/tml-utility.jar' http://khhwtml02t.wanhai.com
 curl -# -o ${earDir}/${earLibDir}'/zuljsp.jar' http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/zkoss/zk/zuljsp/2.6.0/zuljsp-2.6.0.jar
 curl -# -o ${earDir}'/whl-biztml.jar' http://khhwtml02t.wanhai.com:8181/repository/maven-public/com/wanhai/tml/whl-biztml/0.1.0/whl-biztml-0.1.0.jar
 #copy config files to META-INF
-cp -Rf ${JBOSS_HOME}/config/config/${earMetaDir} ${earDir}/${earMetaDir}
+cp -Rf ${JBOSS_HOME}/config/config/${earMetaDir} ${earDir}
 #copy config files to wildfly
