@@ -7,6 +7,6 @@ ENV JAVA_OPTS="-Dcom.wanhai.tml.yard.current=KHHW"
 COPY --chown=jboss . ${JBOSS_HOME}/config
 
 #customize settings & cleanup
-RUN cd ${JBOSS_HOME}/config/initial && ./setup.sh && rm -rf ${JBOSS_HOME}/config
+RUN chmod -R 777 ${JBOSS_HOME}/config && cd ${JBOSS_HOME}/config/initial && ./setup.sh && rm -rf ${JBOSS_HOME}/config
 
 # COPY --chown=jboss WHL_TML.ear ${JBOSS_HOME}/standalone/deployments/WHL_TML.ear
