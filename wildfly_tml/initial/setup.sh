@@ -1,3 +1,5 @@
+#copy wildfly config profile
+cp ../config/*.xml ${JBOSS_HOME}/standalone/configuration/
 #create default EAR Module WHL_TML.ear
 earDir=${JBOSS_HOME}'/standalone/deployments/WHL_TML.ear'
 earLibDir='lib'

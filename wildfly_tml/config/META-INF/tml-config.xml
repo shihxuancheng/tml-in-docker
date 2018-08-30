@@ -2,7 +2,7 @@
 <tmlConfig>
     <!--yard info-->
     <yards>
-        <yard name="KHH063" id="KHH063" place_code="TWKHH" descn_e="KHH063" descn_c="高雄碼頭" defaultSite="true">
+        <yard name="KHHW" id="KHH063" place_code="TWKHH" descn_e="KHH063" descn_c="高雄碼頭" defaultSite="true">
             <datasources>
                 <datasource name="prod">
                     <tnsName>whlt_khhw5</tnsName>
@@ -20,7 +20,7 @@
             <!--ott server url-->
             <ott>/collab/ott/oneTimeTicket.jsp</ott>
         </yard>
-        <yard name="TXG034" id="TXG034" place_code="TWTXG" descn_e="TXG034" descn_c="台中碼頭">
+        <yard name="TXGW" id="TXG034" place_code="TWTXG" descn_e="TXG034" descn_c="台中碼頭">
             <datasources>
                 <datasource name="prod">
                     <tnsName>whlt_txgw5</tnsName>
@@ -38,6 +38,6 @@
             <!--ott server url-->
             <ott>/collab/ott/oneTimeTicket.jsp</ott>
         </yard>
-        <!--<yard name="JPTYO" descn_e="JPTYO" descn_c="大井碼頭"></yard>-->
+        <!--<yard name="TYOW" descn_e="JPTYO" descn_c="大井碼頭"></yard>-->
     </yards>
 </tmlConfig>
