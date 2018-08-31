@@ -1,7 +1,7 @@
 FROM khhwtml02t.wanhai.com:8182/jboss/wildfly-tml:latest
 
 #set environment
-ENV JAVA_OPTS="-Dcom.wanhai.tml.yard.current=TXGW"
+ENV EXTRA_JAVA_OPTS="-Dcom.wanhai.tml.yard.current=TXGW"
 
 #prepare tmp dir
 COPY --chown=jboss . ${JBOSS_HOME}/config
