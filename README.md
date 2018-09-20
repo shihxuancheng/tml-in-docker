@@ -1,18 +1,30 @@
 # tml-in-docker #
 Dockerized TML Web System 
 
-### 安裝Docker
+### 安裝Docker & Docker Compose
+一般Linux
 
     $ wget -qO- https://get.docker.com/ | sh
     $ sudo usermod -aG docker $(whoami)
     $ sudo systemctl enable docker.service
     $ sudo systemctl start docker.service
 
-### 安裝Docker Compose
-
     $ sudo yum install epel-release
     $ sudo yum install -y python-pip
     $ sudo pip install docker-compose
+
+Redhat RHEL 7
+
+    $ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    $ yum makecache fast
+    $ yum install http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.42-1.gitad8f0f7.el7.noarch.rpm
+    $ yum install docker-ce
+    $ yum install docker-compose
+
+
+##### 若docker host在proxy之後
+
+請參考 https://docs.docker.com/config/daemon/systemd/#custom-docker-daemon-options
 
 ### 安裝Rancher CLI
 ```bash
