@@ -1,5 +1,6 @@
 #FROM shihxuancheng/wildfly-base:latest
-FROM ${docker_rep_url}/jboss/wildfly-base:latest
+ARG BASE_IMAGE=khhwtml02t.wanhai.com:8182/jboss/wildfly-base:latest
+FROM $BASE_IMAGE
 
 #prepare tmp dir
 COPY --chown=jboss . ${JBOSS_HOME}/config

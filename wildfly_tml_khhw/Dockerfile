@@ -1,4 +1,5 @@
-FROM ${docker_rep_url}/jboss/wildfly-tml:latest
+ARG BASE_IMAGE=khhwtml02t.wanhai.com:8182/jboss/wildfly-tml:latest
+FROM $BASE_IMAGE
 
 #set environment
 ENV JAVA_OPTS="-Dcom.wanhai.tml.yard.current=KHHW -Dsentry.dsn=http://d5756310a31a47909989df81461b1da1:bfb176b900fb498c8e3b60d31d12c23f@khhwtml02t.wanhai.com:9000/2 -Dsentry.stacktrace.app.packages=com.wanhai.tml -Dsentry.release=0.1.0 -Dsentry.environment=${profile}"
