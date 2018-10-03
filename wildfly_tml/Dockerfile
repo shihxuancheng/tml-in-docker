@@ -5,6 +5,9 @@ FROM $BASE_IMAGE
 #prepare tmp dir
 COPY --chown=jboss . ${JBOSS_HOME}/config
 
+#customize modules
+RUN cd ${JBOSS_HOME}/config/modules && ./make_modules.sh
+
 #customize settings
 RUN chmod -R 777 ${JBOSS_HOME}/config && cd ${JBOSS_HOME}/config/initial && ./setup.sh
 
