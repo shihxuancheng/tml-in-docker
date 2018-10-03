@@ -6,10 +6,10 @@ FROM $BASE_IMAGE
 COPY --chown=jboss . ${JBOSS_HOME}/config
 
 #customize modules
-RUN cd ${JBOSS_HOME}/config/modules && ./make_modules.sh
+RUN chmod -R 777 ${JBOSS_HOME}/config && cd ${JBOSS_HOME}/config/modules && ./make_modules.sh
 
 #customize settings
-RUN chmod -R 777 ${JBOSS_HOME}/config && cd ${JBOSS_HOME}/config/initial && ./setup.sh
+RUN cd ${JBOSS_HOME}/config/initial && ./setup.sh
 
 #cleanup
 RUN rm -rf ${JBOSS_HOME}/config
