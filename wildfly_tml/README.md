@@ -27,7 +27,9 @@
 
 
 ### Predefined Modules
+
 Location:  **${JBOSS_HOME}/modules/**
+
 | Name                   | Version |
 | ---------------------- | ------- |
 | com.wanhai.base        | 1.0.0   |
