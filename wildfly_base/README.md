@@ -1,5 +1,6 @@
 # wildfly-base
 
+[khhwtml02t.wanhai.com:8182/jboss/wildfly-base](http://khhwtml02t.wanhai.com:8181/service/rest/repository/browse/tml-release/v2/jboss/wildfly-base/tags/)  
 定義Global modules & configurations，所有全域性的設定及改變可在此層進行異動
 
 ### Base Image
@@ -13,7 +14,7 @@
 
 1.  **${JBOSS_HOME} = /opt/jboss/wildfly**
 2. 預設 admin account **admin/wanhai_2**
-3. 修改 **$WF_CONFIG** 可切換不同的設定檔
+3. 修改 **$WF_CONFIG** 可切換不同的設定檔 (default: standalone.xml)
 
 ### Predefined Modules
 
