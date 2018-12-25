@@ -148,7 +148,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <!-- TXGW PROD DB -->
+                <!-- TXGW UAT DB -->
                 <datasource jta="true" jndi-name="java:/OraWhltTXGW6DS" pool-name="OraWhltTXGW6DS" enabled="true" use-ccm="true">
                     <connection-url>jdbc:oracle:thin:@txgw6.wanhai.com:1521:whlt</connection-url>
                     <driver-class>oracle.jdbc.OracleDriver</driver-class>
@@ -164,9 +164,9 @@
                         <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
                     </validation>
                 </datasource>
-                <!-- TXGW UAT DB -->
+                <!-- TXGW PROD DB -->
                 <datasource jta="true" jndi-name="java:/OraWhltTXGW5DS" pool-name="OraWhltTXGW5DS" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:oracle:thin:@txgw6.wanhai.com:1521:whlt</connection-url>
+                    <connection-url>jdbc:oracle:thin:@txgw5.wanhai.com:1521:whlt</connection-url>
                     <driver-class>oracle.jdbc.OracleDriver</driver-class>
                     <driver>oracle</driver>
                     <security>
@@ -182,7 +182,7 @@
                 </datasource>   
                 <!-- TXGW CATOS PROD DB -->
                 <datasource jta="true" jndi-name="java:/OraWhltTXGW7DS" pool-name="OraWhltTXGW7DS" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:oracle:thin:@txgw6.wanhai.com:1521:whlt</connection-url>
+                    <connection-url>jdbc:oracle:thin:@txgw7.wanhai.com:1521:whlt</connection-url>
                     <driver-class>oracle.jdbc.OracleDriver</driver-class>
                     <driver>oracle</driver>
                     <security>
