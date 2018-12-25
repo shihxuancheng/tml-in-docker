@@ -148,13 +148,14 @@
                         <password>sa</password>
                     </security>
                 </datasource>
+                <!-- TXGW PROD DB -->
                 <datasource jta="true" jndi-name="java:/OraWhltTXGW5DS" pool-name="OraWhltTXGW5DS" enabled="true" use-ccm="true">
                     <connection-url>jdbc:oracle:thin:@txgw6.wanhai.com:1521:whlt</connection-url>
                     <driver-class>oracle.jdbc.OracleDriver</driver-class>
                     <driver>oracle</driver>
                     <security>
-                        <user-name>TXGWWEB01</user-name>
-                        <password>TXGWWEB180829</password>
+                        <user-name>TXGTMLWEB01</user-name>
+                        <password>TXGTMLWEB180829</password>
                     </security>
                     <validation>
                         <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
@@ -163,13 +164,14 @@
                         <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
                     </validation>
                 </datasource>
+                <!-- TXGW UAT DB -->
                 <datasource jta="true" jndi-name="java:/OraWhltTXGW6DS" pool-name="OraWhltTXGW6DS" enabled="true" use-ccm="true">
                     <connection-url>jdbc:oracle:thin:@txgw6.wanhai.com:1521:whlt</connection-url>
                     <driver-class>oracle.jdbc.OracleDriver</driver-class>
                     <driver>oracle</driver>
                     <security>
-                        <user-name>TXGWWEB01</user-name>
-                        <password>TXGWWEB180829</password>
+                        <user-name>TXGTMLWEB01</user-name>
+                        <password>TH65WX98</password>
                     </security>
                     <validation>
                         <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
@@ -177,7 +179,23 @@
                         <stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
                         <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
                     </validation>
-                </datasource>                
+                </datasource>   
+                <!-- TXGW CATOS PROD DB -->
+                <datasource jta="true" jndi-name="java:/OraWhltTXGW7DS" pool-name="OraWhltTXGW7DS" enabled="true" use-ccm="true">
+                    <connection-url>jdbc:oracle:thin:@txgw6.wanhai.com:1521:whlt</connection-url>
+                    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+                    <driver>oracle</driver>
+                    <security>
+                        <user-name>TXGTMLWEB01</user-name>
+                        <password>TH65WX98</password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
+                        <background-validation>true</background-validation>
+                        <stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
+                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
+                    </validation>
+                </datasource>              
                 <drivers>
                     <!-- default add oracle/mysql jdbc drivers -->
                     <driver name="mysql" module="com.mysql.jdbc"/>
