@@ -149,7 +149,7 @@
                     </security>
                 </datasource>
                 <!-- TXGW PROD DB -->
-                <datasource jta="true" jndi-name="java:/OraWhltTXGW5DS" pool-name="OraWhltTXGW5DS" enabled="true" use-ccm="true">
+                <datasource jta="true" jndi-name="java:/OraWhltTXGW6DS" pool-name="OraWhltTXGW6DS" enabled="true" use-ccm="true">
                     <connection-url>jdbc:oracle:thin:@txgw6.wanhai.com:1521:whlt</connection-url>
                     <driver-class>oracle.jdbc.OracleDriver</driver-class>
                     <driver>oracle</driver>
@@ -165,7 +165,7 @@
                     </validation>
                 </datasource>
                 <!-- TXGW UAT DB -->
-                <datasource jta="true" jndi-name="java:/OraWhltTXGW6DS" pool-name="OraWhltTXGW6DS" enabled="true" use-ccm="true">
+                <datasource jta="true" jndi-name="java:/OraWhltTXGW5DS" pool-name="OraWhltTXGW5DS" enabled="true" use-ccm="true">
                     <connection-url>jdbc:oracle:thin:@txgw6.wanhai.com:1521:whlt</connection-url>
                     <driver-class>oracle.jdbc.OracleDriver</driver-class>
                     <driver>oracle</driver>
