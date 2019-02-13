@@ -2,7 +2,7 @@
 Dockerized TML Web System 
 
 ### 安裝Docker & Docker Compose
-一般Linux
+General Linux
 
     $ wget -qO- https://get.docker.com/ | sh
     $ sudo usermod -aG docker $(whoami)
@@ -22,16 +22,23 @@ Redhat RHEL 7
     $ yum install docker-compose
 
 
-##### 若docker host在proxy之後
+#### 注意事項
 
-請參考 https://docs.docker.com/config/daemon/systemd/#custom-docker-daemon-options
+- 若docker host在proxy之後
+
+    請參考 https://docs.docker.com/config/daemon/systemd/#custom-docker-daemon-options
+
+- 使用insecure registry
+
+    請參考 https://docs.docker.com/registry/insecure/
+
 
 ### 安裝Rancher CLI
 ```bash
 curl -LkSs https://github.com/rancher/cli/releases/download/v0.6.11/rancher-linux-amd64-v0.6.11.tar.gz | tar -xz && mv ./rancher-v0.6.11/rancher /bin/rancher && rm -rf ./rancher-v0.6.11
 ```
 
- ### 由Private register移除Docker Image
+ ### 由Private register移除Docker Image (未驗證)
 
 ```bash
 registry='localhost:5000'
