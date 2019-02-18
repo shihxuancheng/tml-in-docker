@@ -1,0 +1,73 @@
+version: '2'
+services:
+  Global-LB:
+    image: rancher/lb-service-haproxy:v0.9.6
+    ports:
+    - 80:80/tcp
+    labels:
+      io.rancher.scheduler.affinity:host_label: com.wanhai.tml.lb_host=true
+      io.rancher.container.agent.role: environmentAdmin,agent
+      io.rancher.container.agent_service.drain_provider: 'true'
+      io.rancher.container.create_agent: 'true'
+  TeamCity-Agent-Alpha:
+    privileged: true
+    image: khhwtml02t.wanhai.com:8182/jetbrains/teamcity-agent:latest
+    environment:
+      SERVER_URL: http://khhwtml02t.wanhai.com:8111
+      AGENT_NAME: Agent-Alpha1
+      RANCHER_URL: http://khhwtml01t.wanhai.com:8888
+      RANCHER_ACCESS_KEY: 5E7731B2CB115A1B007C
+      RANCHER_SECRET_KEY: VR3DGmfivwHjMPxnhVL4QLv2VEYKcnUHDuTcoWgD
+    stdin_open: true
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  TeamCity-Agent-Beta:
+    privileged: true
+    image: khhwtml02t.wanhai.com:8182/jetbrains/teamcity-agent:latest
+    environment:
+      SERVER_URL: http://khhwtml02t.wanhai.com:8111
+      AGENT_NAME: Agent-Beta1
+      RANCHER_URL: http://khhwtml01t.wanhai.com:8888
+      RANCHER_ACCESS_KEY: 5E7731B2CB115A1B007C
+      RANCHER_SECRET_KEY: VR3DGmfivwHjMPxnhVL4QLv2VEYKcnUHDuTcoWgD
+    stdin_open: true
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name      
+  TML-Docker-Registry:
+    image: sonatype/nexus3:latest
+    environment:
+      TZ: Asia/Taipei
+    stdin_open: true
+    network_mode: bridge
+    volumes:
+    - /docker/nexus3/nexus-data:/nexus-data
+    tty: true
+    ports:
+    - 8181:8081
+    - 8182:8182
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: com.wanhai.tml.main_host=true
+      io.rancher.container.hostname_override: container_name
+  TeamCity-Server:
+    image: jetbrains/teamcity-server:latest
+    environment:
+      TZ: Asia/Taipei
+    stdin_open: true
+    volumes:
+    - /docker/teamcity/data:/data/teamcity_server/datadir
+    - /docker/teamcity/logs:/opt/teamcity/logs
+    tty: true
+    ports:
+    - 8111:8111
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: com.wanhai.tml.main_host=true
+      io.rancher.container.hostname_override: container_name

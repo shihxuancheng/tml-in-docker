@@ -1,0 +1,2 @@
+FROM jetbrains/teamcity-agent:latest
+RUN curl -LkSs https://github.com/rancher/cli/releases/download/v0.6.11/rancher-linux-amd64-v0.6.11.tar.gz | tar -xz && mv -f ./rancher-v0.6.11/rancher /bin/rancher && rm -rf ./rancher-v0.6.11

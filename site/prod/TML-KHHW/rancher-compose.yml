@@ -1,0 +1,83 @@
+version: '2'
+services:
+  TML-WS:
+    scale: 1
+    start_on_create: true
+  LB:
+    scale: 2
+    start_on_create: true
+    lb_config:
+      certs: []
+      config: "defaults\noption forwardfor\n\nlisten stats \nbind 0.0.0.0:9123\nmode\
+        \ http\nstats enable\nstats hide-version\nstats realm Haproxy\\ Statistics\n\
+        stats uri /haproxy_stats"
+      port_rules:
+      - hostname: khhwtml.wanhai.com
+        path: /collab/ott
+        priority: 1
+        protocol: http
+        service: OTT
+        source_port: 80
+        target_port: 8080
+      - hostname: khhwtml.wanhai.com
+        path: /wanhai/tml/static
+        priority: 2
+        protocol: http
+        service: TML-STATIC
+        source_port: 80
+        target_port: 8080
+      - hostname: khhwtml.wanhai.com
+        path: /wanhai/tml/menu
+        priority: 3
+        protocol: http
+        service: TML-MENU
+        source_port: 80
+        target_port: 8080
+      - hostname: khhwtml.wanhai.com
+        path: /wanhai/tml/cy
+        priority: 4
+        protocol: http
+        service: TML-CY
+        source_port: 80
+        target_port: 8080
+      - hostname: khhwtml.wanhai.com
+        path: /wanhai/tml/services
+        priority: 5
+        protocol: http
+        service: TML-WS
+        source_port: 80
+        target_port: 8080
+      - hostname: khhwtml.wanhai.com
+        path: /haproxy_stats
+        priority: 6
+        protocol: http
+        service: LB
+        source_port: 80
+        target_port: 9123
+      stickiness_policy:
+        cookie: JSESSIONID
+        indirect: true
+        mode: prefix
+        nocache: true
+        postonly: false
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 42
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      reinitializing_timeout: 60000
+  TML-CY:
+    scale: 2
+    start_on_create: true
+  TML-MENU:
+    retain_ip: true
+    scale: 1
+    start_on_create: true
+  TML-STATIC:
+    scale: 1
+    start_on_create: true
+  OTT:
+    scale: 1
+    start_on_create: true
