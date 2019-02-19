@@ -2,10 +2,10 @@ version: '2'
 services:
   TML-WS:
     scale: 1
-    start_on_create: true
+    start_on_create: false
   LB:
     scale: 2
-    start_on_create: true
+    start_on_create: false
     lb_config:
       certs: []
       config: "defaults\noption forwardfor\n\nlisten stats \nbind 0.0.0.0:9123\nmode\
@@ -47,13 +47,6 @@ services:
         service: TML-WS
         source_port: 80
         target_port: 8080
-      - hostname: khhwtml.wanhai.com
-        path: /haproxy_stats
-        priority: 6
-        protocol: http
-        service: LB
-        source_port: 80
-        target_port: 9123
       stickiness_policy:
         cookie: JSESSIONID
         indirect: true
@@ -70,14 +63,14 @@ services:
       reinitializing_timeout: 60000
   TML-CY:
     scale: 2
-    start_on_create: true
+    start_on_create: false
   TML-MENU:
     retain_ip: true
     scale: 1
-    start_on_create: true
+    start_on_create: false
   TML-STATIC:
     scale: 1
-    start_on_create: true
+    start_on_create: false
   OTT:
     scale: 1
-    start_on_create: true
+    start_on_create: false

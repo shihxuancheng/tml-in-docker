@@ -23,15 +23,16 @@ services:
     depends_on:
       - "mysql"
     links:
-      - mysql:db
-  fluent-log:
-    container_name: fluent-log
-    image: "fluent/fluentd"
-    ports:
-      - 24224:24224
-      - 24224:24224/udp
-    volumes:
-      - /docker/log:/fluentd/log
+      - mysql:db  
+  # fluent-log:
+  #   container_name: fluent-log
+  #   image: "fluent/fluentd"
+  #   ports:
+  #     - 24224:24224
+  #     - 24224:24224/udp
+  #   volumes:
+  #     - /docker/log:/fluentd/log
+  #   network_mode: "bridge"   
   rancher-server:
     container_name: rancher-server
     image: "rancher/server"
@@ -45,4 +46,3 @@ services:
       DB_HOST: db
     links:
       - mysql:db
-
