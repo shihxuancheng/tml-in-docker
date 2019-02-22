@@ -149,12 +149,12 @@
                     </security>
                 </datasource>
                 <datasource jta="true" jndi-name="java:/SessionStorageDS" pool-name="SessionStorageDS" enabled="true" use-ccm="false">
-                    <connection-url>jdbc:mysql://${SESSIONDB_HOST}/${SESSIONDB_NAMAE}</connection-url>
+                    <connection-url>jdbc:mysql://sessiondb:3306/wf_sessions</connection-url>
                     <driver-class>com.mysql.jdbc.Driver</driver-class>
                     <driver>mysql</driver>
                     <security>
-                        <user-name>${SESSIONDB_USER}</user-name>
-                        <password>${SESSIONDB_PASS}</password>
+                        <user-name>session</user-name>
+                        <password>session</password>
                     </security>
                 </datasource>
                 <drivers>
@@ -345,7 +345,7 @@
             <cache-container name="web" default-cache="jdbc" module="org.wildfly.clustering.web.infinispan">
                 <local-cache name="jdbc">
                     <transaction mode="BATCH"/>
-                    <eviction strategy="LIRS" max-entries="-1"/>
+                    <eviction strategy="NONE" max-entries="-1"/>
                     <expiration max-idle="60000" lifespan="120000" interval="5000"/>
                     <string-keyed-jdbc-store data-source="SessionStorageDS" dialect="MYSQL" passivation="false" purge="false" shared="true">
                         <string-keyed-table>
@@ -518,7 +518,7 @@
         <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>
         <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9993}"/>
         <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
-        <socket-binding name="http" port="${jboss.http.port:8081}"/>
+        <socket-binding name="http" port="${jboss.http.port:8080}"/>
         <socket-binding name="https" port="${jboss.https.port:8443}"/>
         <socket-binding name="txn-recovery-environment" port="4712"/>
         <socket-binding name="txn-status-manager" port="4713"/>

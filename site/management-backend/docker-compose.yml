@@ -45,7 +45,6 @@ services:
     environment:
       TZ: Asia/Taipei
     stdin_open: true
-    network_mode: bridge
     volumes:
     - /docker/nexus3/nexus-data:/nexus-data
     tty: true
