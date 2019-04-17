@@ -5,16 +5,16 @@
         <yard name="KHHW" id="KHH063" place_code="TWKHH" descn_e="KHH063" descn_c="高雄碼頭" defaultSite="true">
             <datasources>
                 <datasource name="prod">
-                    <tnsName>whlt_khhw5</tnsName>
-                    <jndiValue>java:/OraWhltDS</jndiValue>
+                    <tnsName>whlt_khhw7</tnsName>
+                    <jndiValue>java:/OraWhltKHHW7DS</jndiValue>
                 </datasource>
                 <datasource name="uat">
-                    <tnsName>whlt_khhw6</tnsName>
-                    <jndiValue>java:/OraWhltDS</jndiValue>
+                    <tnsName>whlt_khhw58</tnsName>
+                    <jndiValue>java:/OraWhltKHHW58DS</jndiValue>
                 </datasource>
                 <datasource name="sat">
-                    <tnsName>whlt_khhw6</tnsName>
-                    <jndiValue>java:/OraWhltDS</jndiValue>
+                    <tnsName>whlt_khhw58</tnsName>
+                    <jndiValue>java:/OraWhltKHHW58DS</jndiValue>
                 </datasource>
             </datasources>
             <!--ott server url-->
@@ -23,17 +23,17 @@
         <yard name="TXGW" id="TXG034" place_code="TWTXG" descn_e="TXG034" descn_c="台中碼頭">
             <datasources>
                 <datasource name="prod">
-                    <tnsName>whlt_txgw5</tnsName>
-                    <jndiValue>java:/OraWhltDS</jndiValue>
+                    <tnsName>whlt_txgw7</tnsName>
+                    <jndiValue>java:/OraWhltTXGW7DS</jndiValue>
                 </datasource>
                 <datasource name="uat">
-                    <tnsName>whlt_txgw6</tnsName>
-                    <jndiValue>java:/OraWhltDS</jndiValue>
+                    <tnsName>whlt_txgw58</tnsName>
+                    <jndiValue>java:/OraWhltTXGW58DS</jndiValue>
                 </datasource>
                 <datasource name="sat">
-                    <tnsName>whlt_txgw6</tnsName>
-                    <jndiValue>java:/OraWhltDS</jndiValue>
-                </datasource>
+                    <tnsName>whlt_txgw58</tnsName>
+                    <jndiValue>java:/OraWhltTXGW58DS</jndiValue>
+        </datasource>
             </datasources>
             <!--ott server url-->
             <ott>/collab/ott/oneTimeTicket.jsp</ott>
