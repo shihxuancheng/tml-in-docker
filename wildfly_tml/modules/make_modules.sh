@@ -1,5 +1,12 @@
 #variablies
 WF_MODULE_PATH=${JBOSS_HOME}'/modules'
+# #setup module of poi
+echo 'Download jars of org.apache.poi=>'
+mkdir -p ${WF_MODULE_PATH}/org/apache/poi/3.17/main
+curl -# -o ${WF_MODULE_PATH}/org/apache/poi/3.17/main/poi-3.17.jar https://repo1.maven.org/maven2/org/apache/poi/poi/3.17/poi-3.17.jar
+cp ./module_poi_317.xml ${WF_MODULE_PATH}/org/apache/poi/3.17/main/module.xml
+#setup default slot of poi module(default is 3.17)
+mkdir ${WF_MODULE_PATH}/org/apache/poi/main && cp ./module_poi.xml ${WF_MODULE_PATH}/org/apache/poi/main/module.xml
 
 #setup module of wanhai base
 echo 'Download jars of com.wanhai.base=>'
