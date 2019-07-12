@@ -19,7 +19,7 @@ mkdir -p ${WF_MODULE_PATH}/org/apache/poi/3.17/main
 curl -# -o ${WF_MODULE_PATH}/org/apache/poi/3.17/main/poi-3.17.jar http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/apache/poi/poi/3.17/poi-3.17.jar
 curl -# -o ${WF_MODULE_PATH}/org/apache/poi/3.17/main/poi-ooxml-3.17.jar http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar
 curl -# -o ${WF_MODULE_PATH}/org/apache/poi/3.17/main/poi-ooxml-schemas-3.17.jar http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar
-cp ./module_poi_317.xml ${WF_MODULE_PATH}/org/apache/poi/3.17/main/module.xml
+cp ./module_poi_317.xml ${WF_MODULE_PATH}/org/apache/poi/3.17/module.xml
 #setup default slot of poi module(default is 3.17)
 mkdir ${WF_MODULE_PATH}/org/apache/poi/main && cp ./module_poi.xml ${WF_MODULE_PATH}/org/apache/poi/main/module.xml
 
