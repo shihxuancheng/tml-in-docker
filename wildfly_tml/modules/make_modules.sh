@@ -1,9 +1,24 @@
 #variablies
 WF_MODULE_PATH=${JBOSS_HOME}'/modules'
+
+# #setup module of apache commons collections4
+echo 'Download jars of org.apache.commons.collections4=>'
+mkdir -p ${WF_MODULE_PATH}/org/apache/commons/collections4/main
+curl -# -o ${WF_MODULE_PATH}/org/apache/commons/collections4/main/commons-collections4-4.1.jar http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar
+cp ./module_collections4.xml ${WF_MODULE_PATH}/org/apache/commons/collections4/main/module.xml
+
+# #setup module of apache xmlbeans
+echo 'Download jars of org.apache.xmlbeans=>'
+mkdir -p ${WF_MODULE_PATH}/org/apache/xmlbeans/main
+curl -# -o ${WF_MODULE_PATH}/org/apache/xmlbeans/main/xmlbeans-2.6.0.jar http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar
+cp ./module_xmlbeans.xml ${WF_MODULE_PATH}/org/apache/xmlbeans/main/module.xml
+
 # #setup module of poi
 echo 'Download jars of org.apache.poi=>'
 mkdir -p ${WF_MODULE_PATH}/org/apache/poi/3.17/main
-curl -# -o ${WF_MODULE_PATH}/org/apache/poi/3.17/main/poi-3.17.jar https://repo1.maven.org/maven2/org/apache/poi/poi/3.17/poi-3.17.jar
+curl -# -o ${WF_MODULE_PATH}/org/apache/poi/3.17/main/poi-3.17.jar http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/apache/poi/poi/3.17/poi-3.17.jar
+curl -# -o ${WF_MODULE_PATH}/org/apache/poi/3.17/main/poi-ooxml-3.17.jar http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar
+curl -# -o ${WF_MODULE_PATH}/org/apache/poi/3.17/main/poi-ooxml-schemas-3.17.jar http://khhwtml02t.wanhai.com:8181/repository/maven-public/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar
 cp ./module_poi_317.xml ${WF_MODULE_PATH}/org/apache/poi/3.17/main/module.xml
 #setup default slot of poi module(default is 3.17)
 mkdir ${WF_MODULE_PATH}/org/apache/poi/main && cp ./module_poi.xml ${WF_MODULE_PATH}/org/apache/poi/main/module.xml
