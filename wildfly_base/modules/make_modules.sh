@@ -59,6 +59,28 @@ curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/bsh.jar http://central.mave
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/slf4j-api.jar http://central.maven.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar 
 curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/slf4j-jdk14.jar http://central.maven.org/maven2/org/slf4j/slf4j-jdk14/1.7.5/slf4j-jdk14-1.7.5.jar 
 cp ./module_zk8.xml ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/module.xml
+
+ZK8_VER='8.6.0.1'
+#setup zk module(8.6.0.1)
+echo 'Download jars of zk-'${ZK8_VER} '=>'
+mkdir -p ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zcommon.jar http://central.maven.org/maven2/org/zkoss/common/zcommon/$ZK8_VER/zcommon-$ZK8_VER.jar  
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zweb.jar http://central.maven.org/maven2/org/zkoss/common/zweb/$ZK8_VER/zweb-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zul.jar http://central.maven.org/maven2/org/zkoss/zk/zul/$ZK8_VER/zul-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zk.jar http://central.maven.org/maven2/org/zkoss/zk/zk/$ZK8_VER/zk-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zkplus.jar http://central.maven.org/maven2/org/zkoss/zk/zkplus/$ZK8_VER/zkplus-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zhtml.jar http://central.maven.org/maven2/org/zkoss/zk/zhtml/$ZK8_VER/zhtml-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zkbind.jar http://central.maven.org/maven2/org/zkoss/zk/zkbind/$ZK8_VER/zkbind-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zel.jar http://central.maven.org/maven2/org/zkoss/common/zel/$ZK8_VER/zel-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/silvertail.jar http://central.maven.org/maven2/org/zkoss/theme/silvertail/$ZK8_VER/silvertail-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/sapphire.jar http://central.maven.org/maven2/org/zkoss/theme/sapphire/$ZK8_VER/sapphire-$ZK8_VER.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/zsoup.jar http://mavensync.zkoss.org/maven2/org/zkoss/zsoup/1.8.2.5/zsoup-1.8.2.5.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/bsh.jar http://central.maven.org/maven2/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/slf4j-api.jar http://central.maven.org/maven2/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar 
+curl -# -o ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/slf4j-jdk14.jar http://central.maven.org/maven2/org/slf4j/slf4j-jdk14/1.7.5/slf4j-jdk14-1.7.5.jar 
+cp ./module_zk_${ZK8_VER}.xml ${WF_MODULE_PATH}/org/zkoss/zk/${ZK8_VER}/module.xml
+
+
 #setup default slot of zk module(default is zk8)
 mkdir ${WF_MODULE_PATH}/org/zkoss/zk/main && cp ./module_zk.xml ${WF_MODULE_PATH}/org/zkoss/zk/main/module.xml
 
